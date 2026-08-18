@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6d2b24">
+<meta name="description" content="Ресторан «В сердце Гедуко» — «Источник вкуса». Тёплая атмосфера, авторская подача и кухня для встреч с близкими. Набережная, 41.">
+<meta property="og:title" content="Источник вкуса — ресторан в сердце Гедуко">
+<meta property="og:description" content="Ресторан «В сердце Гедуко». Набережная, 41. Забронировать столик.">
+<meta property="og:type" content="website">
+<title>Источник вкуса — ресторан в сердце Гедуко</title>
+<link rel="icon" href="assets/mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f1e8d2;--cream2:#e9dfc7;--wine:#6d2b24;--wine2:#4d1c18;
+  --ink:#241916;--muted:#786b63;--line:rgba(77,28,24,.16);--paper:#fbf7ed;
+  --shadow:0 24px 70px rgba(49,26,20,.16);--radius:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+img{display:block;width:100%}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:10px;font-weight:700;color:#a06b53}
+.serif{font-family:"Playfair Display",serif}
+header{position:fixed;z-index:100;top:0;left:0;right:0;padding:18px 0;transition:.35s}
+header.scrolled{background:rgba(241,232,210,.9);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(60,30,20,.08);padding:10px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700}
+.brand img{width:39px;height:39px}
+.brand-text{line-height:1}
+.brand-text strong{font-family:"Playfair Display",serif;font-size:20px;display:block}
+.brand-text span{font-size:8px;text-transform:uppercase;letter-spacing:.17em;color:var(--muted)}
+.navlinks{display:flex;gap:26px;font-size:12px;font-weight:600}
+.navlinks a{opacity:.76;transition:.2s}
+.navlinks a:hover{opacity:1;color:var(--wine)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.phone{font-size:12px;font-weight:700}
+.pill{border:1px solid var(--wine);background:var(--wine);color:#fff;padding:12px 17px;border-radius:999px;font-size:11px;font-weight:700;cursor:pointer;transition:.25s;display:inline-flex;justify-content:center;align-items:center}
+.pill:hover{transform:translateY(-2px);background:var(--wine2)}
+.pill.light{background:transparent;color:var(--wine);border-color:rgba(109,43,36,.3)}
+.pill.light:hover{background:var(--wine);color:#fff}
+.menu-toggle{display:none;border:0;background:var(--wine);color:#fff;width:42px;height:42px;border-radius:50%;font-size:19px}
+.mobile-panel{display:none}
+
+.hero{min-height:820px;height:100svh;max-height:960px;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#3b1b16;color:#fff}
+.hero-bg{position:absolute;inset:0;background:
+linear-gradient(180deg,rgba(30,13,10,.16) 10%,rgba(30,13,10,.12) 38%,rgba(30,13,10,.83) 100%),
+url("assets/hero.jpg") center 35%/cover no-repeat;transform:scale(1.03)}
+.hero-content{position:relative;z-index:2;width:100%;padding-bottom:74px}
+.hero-kicker{display:inline-flex;gap:9px;align-items:center;border:1px solid rgba(255,255,255,.28);background:rgba(0,0,0,.16);backdrop-filter:blur(10px);padding:9px 13px;border-radius:999px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px}
+.hero-kicker i{width:6px;height:6px;border-radius:50%;background:#e4c98c}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(58px,8vw,112px);line-height:.88;letter-spacing:-.045em;font-weight:600;max-width:950px}
+.hero h1 em{color:#e4c98c;font-style:italic}
+.hero-sub{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:34px}
+.hero-sub p{max-width:510px;font-size:14px;line-height:1.75;color:rgba(255,255,255,.8)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero .pill.light{color:#fff;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08)}
+.hero .pill.light:hover{background:#fff;color:var(--wine)}
+.scroll-note{position:absolute;right:28px;bottom:34px;font-size:9px;text-transform:uppercase;letter-spacing:.2em;writing-mode:vertical-rl;color:rgba(255,255,255,.65)}
+
+.intro{padding:125px 0 100px}
+.intro-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:90px}
+.intro h2,.section-title{font-family:"Playfair Display",serif;font-size:clamp(46px,6vw,78px);line-height:.94;letter-spacing:-.045em;font-weight:600}
+.lead{font-size:18px;line-height:1.8;color:#5e514b;max-width:690px}
+.lead strong{color:var(--ink)}
+
+.signature{display:flex;gap:20px;align-items:center;margin-top:34px}
+.signature-line{width:52px;height:1px;background:var(--wine)}
+.signature span{font-family:"Playfair Display",serif;font-style:italic;font-size:20px;color:var(--wine)}
+
+.story{background:var(--wine);color:#fff;padding:110px 0}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
+.story-photo{height:620px;border-radius:var(--radius);overflow:hidden}
+.story-photo img{height:100%;object-fit:cover}
+.story h2{font-family:"Playfair Display",serif;font-size:clamp(48px,5.5vw,76px);line-height:.95;letter-spacing:-.04em;margin-bottom:25px}
+.story p{font-size:15px;line-height:1.9;color:rgba(255,255,255,.73);max-width:520px}
+.story .eyebrow{color:#e1b889}
+.story-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
+.story-item{border-top:1px solid rgba(255,255,255,.2);padding-top:13px;font-size:12px}
+.story-item span{display:block;color:#d9b67e;font-size:9px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:6px}
+
+.menu-section{padding:125px 0}
+.menu-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.menu-head p{max-width:420px;color:var(--muted);font-size:13px;line-height:1.7}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tab{border:1px solid var(--line);background:transparent;color:var(--wine);padding:11px 15px;border-radius:999px;font-size:11px;font-weight:700;cursor:pointer;transition:.2s}
+.tab.active,.tab:hover{background:var(--wine);color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.menu-card{background:#fff;border:1px solid rgba(77,28,24,.08);padding:23px 25px;border-radius:18px;display:flex;justify-content:space-between;gap:20px;min-height:86px;transition:.25s}
+.menu-card:hover{transform:translateY(-2px);box-shadow:0 14px 35px rgba(60,30,20,.08)}
+.menu-card h3{font-size:14px;line-height:1.25;margin-bottom:5px}
+.menu-card p{font-size:11px;color:#8a7c73;line-height:1.45}
+.price{font-weight:800;color:var(--wine);white-space:nowrap}
+.menu-note{margin-top:20px;color:#8c7e74;font-size:10px;line-height:1.6}
+.menu-visuals{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:55px}
+.menu-visual{background:var(--cream);padding:15px;border-radius:22px;box-shadow:var(--shadow)}
+.menu-visual img{aspect-ratio:1/1.35;object-fit:cover;object-position:top;border-radius:14px}
+
+.gallery{padding:0 0 125px}
+.gallery-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
+.gallery-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr;grid-template-rows:300px 300px;gap:14px}
+.gallery-item{border-radius:22px;overflow:hidden;position:relative;background:#ddd;cursor:pointer}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item img{height:100%;object-fit:cover;transition:.7s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-label{position:absolute;left:17px;bottom:17px;color:#fff;background:rgba(20,10,8,.48);backdrop-filter:blur(10px);padding:8px 11px;border-radius:999px;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
+
+.experience{padding:110px 0;background:var(--cream)}
+.experience-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.experience h2{font-family:"Playfair Display",serif;font-size:clamp(48px,5.5vw,75px);line-height:.95}
+.experience p{color:var(--muted);font-size:14px;line-height:1.8;margin-top:22px;max-width:520px}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.point{padding:20px;background:rgba(255,255,255,.55);border-radius:17px}
+.point b{display:block;color:var(--wine);font-size:12px;margin-bottom:7px}
+.point span{font-size:11px;color:var(--muted);line-height:1.5}
+
+.booking{padding:125px 0}
+.booking-box{background:var(--wine);color:#fff;border-radius:32px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.booking h2{font-family:"Playfair Display",serif;font-size:clamp(46px,5vw,70px);line-height:.95}
+.booking p{margin-top:20px;color:rgba(255,255,255,.7);font-size:13px;line-height:1.75;max-width:440px}
+.booking-form{display:grid;gap:11px}
+.booking-form input,.booking-form textarea{width:100%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;padding:14px 15px;border-radius:13px;outline:none}
+.booking-form input::placeholder,.booking-form textarea::placeholder{color:rgba(255,255,255,.55)}
+.booking-form input:focus,.booking-form textarea:focus{border-color:#e1b889}
+.booking-form textarea{min-height:95px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.form-status{font-size:11px;color:#e1d2b7;min-height:16px}
+
+.contacts{padding:0 0 120px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.contact-card{background:#fff;border-radius:24px;padding:32px;border:1px solid rgba(77,28,24,.08)}
+.contact-card h3{font-family:"Playfair Display",serif;font-size:31px;margin-bottom:10px}
+.contact-card p,.contact-card a{font-size:13px;color:var(--muted);line-height:1.7}
+.map-placeholder{min-height:260px;background:linear-gradient(135deg,#d7c6a4,#eee5d1);border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden}
+.map-placeholder:before{content:"";position:absolute;inset:0;background-image:linear-gradient(45deg,transparent 49%,rgba(109,43,36,.09) 50%,transparent 51%),linear-gradient(-45deg,transparent 49%,rgba(109,43,36,.07) 50%,transparent 51%);background-size:55px 55px}
+.map-placeholder>*{position:relative}
+.map-pin{width:42px;height:42px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;margin-bottom:auto}
+
+footer{background:#281714;color:#fff;padding:70px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;padding-bottom:55px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand{font-family:"Playfair Display",serif;font-size:40px}
+.footer-about{color:rgba(255,255,255,.55);font-size:12px;line-height:1.7;max-width:320px;margin-top:12px}
+footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b98a;margin-bottom:20px}
+.footer-links{display:grid;gap:11px;font-size:12px;color:rgba(255,255,255,.65)}
+.footer-links a:hover{color:#fff}
+.footer-bottom{padding-top:22px;display:flex;justify-content:space-between;color:rgba(255,255,255,.38);font-size:9px}
+
+.lightbox{position:fixed;inset:0;background:rgba(20,10,8,.93);z-index:500;display:none;align-items:center;justify-content:center;padding:25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(1000px,95vw);max-height:90vh;object-fit:contain;border-radius:16px}
+.close-lightbox{position:absolute;top:20px;right:20px;border:0;background:rgba(255,255,255,.12);color:#fff;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer}
+
+.reveal{opacity:0;transform:translateY(28px);transition:.8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+ .navlinks,.phone{display:none}.menu-toggle{display:block}
+ .nav-actions{margin-left:auto}.mobile-panel{position:absolute;top:68px;left:20px;right:20px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow);display:none}
+ .mobile-panel.open{display:grid}.mobile-panel a{padding:13px;border-bottom:1px solid var(--line);font-size:13px}.mobile-panel a:last-child{border:0}
+ .hero{min-height:760px}.hero-sub{flex-direction:column;align-items:flex-start}
+ .intro-grid,.story-grid,.experience-grid,.booking-box{grid-template-columns:1fr;gap:45px}
+ .story-photo{height:470px}.menu-head,.gallery-head{align-items:flex-start;flex-direction:column}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:280px 280px}.gallery-item:first-child{grid-row:span 2}
+ .booking-box{padding:40px 28px}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .container{width:calc(100% - 28px)}
+ header{padding:12px 0}
+ .brand img{width:35px;height:35px}.brand-text strong{font-size:18px}
+ .hero{min-height:700px}.hero-content{padding-bottom:48px}.hero h1{font-size:56px}
+ .hero-sub p{font-size:12px}.hero-actions{width:100%}.hero-actions .pill{flex:1}
+ .intro,.menu-section,.booking{padding:85px 0}.story,.experience{padding:85px 0}.gallery{padding-bottom:85px}.contacts{padding-bottom:85px}
+ .intro h2,.section-title{font-size:49px}
+ .story-photo{height:380px}.story-list,.points,.menu-grid,.contact-grid,.form-row,.footer-grid{grid-template-columns:1fr}
+ .menu-visuals{grid-template-columns:1fr}
+ .gallery-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:240px 240px}
+ .gallery-item:first-child{grid-column:span 2;grid-row:auto}
+ .gallery-item{min-height:180px}
+ .booking-box{padding:34px 22px}
+ .booking h2{font-size:50px}
+ .footer-grid{gap:35px}.footer-bottom{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+ <div class="container nav">
+  <a class="brand" href="#top" aria-label="Источник вкуса — на главную">
+   <img src="assets/mark.svg" alt="">
+   <span class="brand-text"><strong>Источник вкуса</strong><span>кафе в сердце Гедуко</span></span>
+  </a>
+  <nav class="navlinks" aria-label="Основная навигация">
+   <a href="#about">О ресторане</a><a href="#menu">Меню</a><a href="#gallery">Атмосфера</a><a href="#booking">Бронь</a><a href="#contacts">Контакты</a>
+  </nav>
+  <div class="nav-actions">
+   <a class="phone" href="tel:+79320008887">8 (932) 000-88-87</a>
+   <a class="pill" href="#booking">Забронировать</a>
+   <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+  </div>
+ </div>
+ <div class="mobile-panel" id="mobilePanel">
+  <a href="#about">О ресторане</a><a href="#menu">Меню</a><a href="#gallery">Атмосфера</a><a href="#booking">Забронировать</a><a href="#contacts">Контакты</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="hero-bg"></div>
+ <div class="hero-content">
+  <div class="container">
+   <div class="hero-kicker"><i></i> ресторан в сердце Гедуко</div>
+   <h1>Вкус, который<br>остаётся <em>в памяти.</em></h1>
+   <div class="hero-sub">
+    <p>«Источник вкуса» — место для долгих разговоров, красивых встреч и кухни, к которой хочется вернуться. Набережная, 41.</p>
+    <div class="hero-actions"><a class="pill" href="#menu">Смотреть меню</a><a class="pill light" href="#booking">Забронировать стол</a></div>
+   </div>
+  </div>
+ </div>
+ <div class="scroll-note">листайте ↓</div>
+</section>
+
+<section class="intro reveal" id="about">
+ <div class="container intro-grid">
+  <div><div class="eyebrow">01 · О месте</div><h2>Не просто<br>поесть.</h2></div>
+  <div>
+   <p class="lead"><strong>«Источник вкуса» — ресторанная атмосфера в самом сердце Гедуко.</strong> Тёплый свет, фактурный текстиль, натуральное дерево и детали с характером создают пространство, в котором хочется задержаться.</p>
+   <p class="lead" style="margin-top:20px">Здесь одинаково уместны семейный ужин, встреча после отдыха, день рождения или просто хороший вечер без повода.</p>
+   <div class="signature"><span class="signature-line"></span><span>встречаем как своих</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="story reveal">
+ <div class="container story-grid">
+  <div class="story-photo"><img src="assets/interior.jpg" alt="Интерьер ресторана Источник вкуса"></div>
+  <div>
+   <div class="eyebrow">02 · Атмосфера</div>
+   <h2>Тепло.<br>Вкусно.<br>По-настоящему.</h2>
+   <p>Интерьер «Источника вкуса» собран вокруг ощущения домашнего гостеприимства: тёплые оттенки, ручная фактура, мягкий свет и выразительные этнические детали.</p>
+   <div class="story-list">
+    <div class="story-item"><span>01</span>Уютный зал</div>
+    <div class="story-item"><span>02</span>Тёплый свет</div>
+    <div class="story-item"><span>03</span>Большой выбор блюд</div>
+    <div class="story-item"><span>04</span>Для встреч и семейных вечеров</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="menu-section reveal" id="menu">
+ <div class="container">
+  <div class="menu-head">
+   <div><div class="eyebrow">03 · Меню</div><h2 class="section-title">Выбирайте<br>по настроению.</h2></div>
+   <p>Мы перенесли позиции из актуального меню в удобный цифровой формат. Нажмите категорию — и нужные блюда окажутся перед глазами.</p>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="menu-grid" id="menuGrid"></div>
+  <p class="menu-note">Цены указаны по предоставленному меню. Перед визитом рекомендуем уточнить актуальность позиций и стоимость у ресторана.</p>
+  <div class="menu-visuals">
+   <div class="menu-visual"><img src="assets/menu-kitchen.jpg" alt="Меню кухни ресторана Источник вкуса"></div>
+   <div class="menu-visual"><img src="assets/menu-drinks.jpg" alt="Меню напитков ресторана Источник вкуса"></div>
+  </div>
+ </div>
+</section>
+
+<section class="gallery reveal" id="gallery">
+ <div class="container">
+  <div class="gallery-head"><div><div class="eyebrow">04 · Галерея</div><h2 class="section-title">Посмотрите<br>внутри.</h2></div><p style="max-width:360px;color:var(--muted);font-size:13px;line-height:1.7">Настоящие фотографии ресторана — без стоков и чужих интерьеров.</p></div>
+  <div class="gallery-grid">
+   <div class="gallery-item" data-full="assets/hero.jpg"><img src="assets/hero.jpg" alt="Зал ресторана"><span class="gallery-label">зал</span></div>
+   <div class="gallery-item" data-full="assets/interior.jpg"><img src="assets/interior.jpg" alt="Уютная зона ресторана"><span class="gallery-label">интерьер</span></div>
+   <div class="gallery-item" data-full="assets/lamp.jpg"><img src="assets/lamp.jpg" alt="Декор и освещение"><span class="gallery-label">детали</span></div>
+   <div class="gallery-item" data-full="assets/detail.jpg"><img src="assets/detail.jpg" alt="Декор ресторана"><span class="gallery-label">атмосфера</span></div>
+   <div class="gallery-item" data-full="assets/menu-kitchen.jpg"><img src="assets/menu-kitchen.jpg" alt="Меню кухни"><span class="gallery-label">меню</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="experience reveal">
+ <div class="container experience-grid">
+  <div><div class="eyebrow">05 · Повод</div><h2>Здесь хорошо<br>быть вместе.</h2><p>Сайт должен продавать не только блюда, но и сам вечер. Поэтому мы показываем ресторан как место, куда хочется привести близких.</p></div>
+  <div class="points">
+   <div class="point"><b>Семейный ужин</b><span>Спокойная атмосфера и большой выбор блюд для разных вкусов.</span></div>
+   <div class="point"><b>Встреча</b><span>Место для разговоров, которые не хочется заканчивать.</span></div>
+   <div class="point"><b>Праздник</b><span>Заранее забронируйте стол и соберите компанию.</span></div>
+   <div class="point"><b>После Гедуко</b><span>Завершите день хорошей кухней и тёплой атмосферой.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="booking reveal" id="booking">
+ <div class="container">
+  <div class="booking-box">
+   <div><div class="eyebrow" style="color:#e1b889">06 · Бронирование</div><h2>Ваш стол<br>уже ждёт.</h2><p>Оставьте контакт и пожелания. Для демо-версии форма собирает заявку и предлагает связаться с рестораном по телефону. Когда администратор даст рабочий канал бронирования, его можно подключить сюда без переделки дизайна.</p><a class="pill light" href="tel:+79320008887">Позвонить сейчас</a></div>
+   <form class="booking-form" id="bookingForm">
+    <div class="form-row"><input id="name" required placeholder="Ваше имя" autocomplete="name"><input id="guests" required type="number" min="1" max="30" placeholder="Гостей"></div>
+    <div class="form-row"><input id="date" required type="date"><input id="time" required type="time"></div>
+    <input id="phoneInput" required type="tel" placeholder="Телефон" autocomplete="tel">
+    <textarea id="comment" placeholder="Пожелания: повод, зона, детский стул и т.д."></textarea>
+    <button class="pill" type="submit">Отправить заявку</button>
+    <div class="form-status" id="formStatus" role="status"></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="contacts reveal" id="contacts">
+ <div class="container contact-grid">
+  <div class="contact-card">
+   <div class="eyebrow">07 · Контакты</div>
+   <h3>Набережная, 41</h3>
+   <p>Гедуко<br>Кабардино-Балкарская Республика</p>
+   <p style="margin-top:18px"><a href="tel:+79320008887"><strong style="color:var(--wine)">8 (932) 000-88-87</strong></a></p>
+   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px"><a class="pill" href="tel:+79320008887">Позвонить</a><a class="pill light" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%93%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%20%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%2041">Открыть карту</a></div>
+  </div>
+  <div class="map-placeholder"><div class="map-pin">●</div><div><div class="eyebrow">Мы здесь</div><h3 style="font-family:'Playfair Display',serif;font-size:32px">В сердце Гедуко</h3><p style="font-size:12px;color:var(--muted);margin-top:5px">Набережная, 41</p></div></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="footer-brand">Источник вкуса</div><p class="footer-about">Ресторан в сердце Гедуко. Место, где вкус, атмосфера и люди собираются за одним столом.</p></div>
+   <div><h4>Навигация</h4><div class="footer-links"><a href="#about">О ресторане</a><a href="#menu">Меню</a><a href="#gallery">Атмосфера</a><a href="#booking">Бронирование</a></div></div>
+   <div><h4>Связь</h4><div class="footer-links"><a href="tel:+79320008887">8 (932) 000-88-87</a><a href="https://www.instagram.com/geduko_kbr/" target="_blank" rel="noopener">@geduko_kbr</a><span>Набережная, 41</span></div></div>
+  </div>
+  <div class="footer-bottom"><span>© Источник вкуса · 2026</span><span>Ресторан в сердце Гедуко</span></div>
+ </div>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true"><button class="close-lightbox" id="closeLightbox" aria-label="Закрыть">×</button><img id="lightboxImg" src="" alt=""></div>
+
+<script>
+const menu = [
+["Салаты","Свежий салат","310"],["Салаты","Табуле","360"],["Салаты","Хрустящие баклажаны","390"],["Салаты","Цитрусовый салат","390"],["Салаты","Греческий салат","460"],["Салаты","Бора-Бора","490"],["Салаты","Салат «Гедуко»","490"],["Салаты","Цезарь с курицей","440"],["Салаты","Цезарь с креветками","640"],
+["Горячие блюда","Котлеты по-киевски","440"],["Горячие блюда","Жаркое с куриным филе","510"],["Горячие блюда","Жаркое с телятиной","610"],["Горячие блюда","Бефстроганов с грибами","590"],["Горячие блюда","Бараньи ребра с пастой","690"],
+["Бургеры","Сэндвич с индейкой","360"],["Бургеры","Сэндвич с курицей","390"],["Бургеры","Бургер куриный","460"],["Бургеры","Бургер говяжий","590"],["Бургеры","Ливанская шаурма из курицы","490"],
+["Закуски","Стрипсы куриные","290"],["Закуски","Куриные крылышки","310"],["Закуски","Жареный сулугуни","410"],["Закуски","Креветки темпура","590"],["Закуски","Ассорти овощей","710"],
+["Супы","Суп лапша с курицей","340"],["Супы","Солянка мясная","460"],["Супы","Шурпа из баранины","490"],["Супы","Том Ям (острый)","690"],
+["Мангал","Люля-кебаб из курицы","360"],["Мангал","Люля-кебаб из телятины","460"],["Мангал","Шашлык из курицы","490"],["Мангал","Шашлык из телятины","860"],["Мангал","Шашлык из баранины","860"],["Мангал","Кебаб с сырной лавой","610"],["Мангал","Карп на мангале","610"],["Мангал","Форель на углях","890"],["Мангал","Баранья спинка","990"],["Мангал","Курица на мангале","1100"],["Мангал","Мясное ассорти на углях","4400"],
+["Паста","Фетучини с курицей и грибами","410"],["Паста","Фетучини с креветками","560"],
+["Пицца","Маргарита","410"],["Пицца","Чикен барбекю","490"],["Пицца","Пепперони (острая)","510"],["Пицца","Четыре сыра","560"],["Пицца","Ассорти","690"],
+["Хычины","Хычины классические","160"],["Хычины","Хычины с мясом","210"],["Хычины","Хычины с сыром и ботвой","210"],
+["Лахмаджун","Домашний сыр и зелень","460"],["Лахмаджун","С рубленным мясом","560"],["Лахмаджун","Ассорти","560"],
+["Чебуреки и хачапури","Хлебная корзина","160"],["Чебуреки и хачапури","Чебурек с сыром","290"],["Чебуреки и хачапури","Чебурек с мясом","340"],["Чебуреки и хачапури","Хачапури по-аджарски","410"],
+["Холодные напитки","Родниковая вода","110"],["Холодные напитки","Кола / Фанта","160"],["Холодные напитки","Соки в ассортименте 1л/0.2л","260 / 90"],["Холодные напитки","Кинза в ассорти","160"],["Холодные напитки","Адреналин 0.25л","210"],["Холодные напитки","Red Bull 0.25л","260"],["Холодные напитки","Безалкогольное пиво 0.5л","310"],["Холодные напитки","Нахтарави в ассортименте","160"],
+["Лимонады","Манго – маракуйя","340 / 690"],["Лимонады","Киви – фейхоа","340 / 690"],["Лимонады","Цитрусовый","340 / 690"],["Лимонады","Ягодный","340 / 690"],
+["Коктейли","Пина колада","390"],["Коктейли","Мохито","390"],["Коктейли","Апероль шприц","390"],
+["Кофе","Эспрессо","190"],["Кофе","Американо","190"],["Кофе","Кофе по-восточному /2","190 / 240"],["Кофе","Капучино /2","260 / 360"],["Кофе","Латте","260"],["Кофе","Флэт уайт","340"],["Кофе","Раф","360"],
+["Чай","Черный","340"],["Чай","Сенча","340"],["Чай","С бергамотом","390"],["Чай","С чабрецом","390"],["Чай","Наглый фрукт","390"],["Чай","Травяной сбор","410"],["Чай","Горный чай","410"],["Чай","Иван чай","410"],
+["Домашний чай","Ягодный","460"],["Домашний чай","Облепиховый с апельсином","490"],["Домашний чай","Имбирь-мята","490"],["Домашний чай","Имбирь-апельсин","490"]
+];
+
+const tabs = document.getElementById("tabs");
+const grid = document.getElementById("menuGrid");
+const categories = [...new Set(menu.map(x=>x[0]))];
+let active = "Все";
+
+function renderTabs(){
+  tabs.innerHTML = ["Все",...categories].map(c=>`<button class="tab ${c===active?"active":""}" data-cat="${c}">${c}</button>`).join("");
+  tabs.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{active=b.dataset.cat;renderTabs();renderMenu()}));
+}
+function renderMenu(){
+  const items = active==="Все" ? menu : menu.filter(x=>x[0]===active);
+  grid.innerHTML = items.map(([cat,name,price])=>`<article class="menu-card"><div><h3>${name}</h3><p>${cat}</p></div><div class="price">${price} ₽</div></article>`).join("");
+}
+renderTabs();renderMenu();
+
+const header=document.getElementById("header");
+addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>30));
+
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+const toggle=document.getElementById("menuToggle"), panel=document.getElementById("mobilePanel");
+toggle.addEventListener("click",()=>panel.classList.toggle("open"));
+panel.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>panel.classList.remove("open")));
+
+document.querySelectorAll(".gallery-item").forEach(item=>{
+  item.addEventListener("click",()=>{
+    document.getElementById("lightboxImg").src=item.dataset.full;
+    document.getElementById("lightbox").classList.add("open");
+    document.getElementById("lightbox").setAttribute("aria-hidden","false");
+  });
+});
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("open");
+  document.getElementById("lightbox").setAttribute("aria-hidden","true");
+}
+document.getElementById("closeLightbox").addEventListener("click",closeLightbox);
+document.getElementById("lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")closeLightbox()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});
+
+document.getElementById("date").min=new Date().toISOString().split("T")[0];
+document.getElementById("bookingForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const guests=document.getElementById("guests").value;
+  const date=document.getElementById("date").value;
+  const time=document.getElementById("time").value;
+  const phone=document.getElementById("phoneInput").value.trim();
+  const comment=document.getElementById("comment").value.trim();
+  const msg=`Здравствуйте! Хочу забронировать стол в ресторане «Источник вкуса».
+Имя: ${name}
+Гостей: ${guests}
+Дата: ${date}
+Время: ${time}
+Телефон: ${phone}
+Пожелания: ${comment || "нет"}`;
+  document.getElementById("formStatus").textContent="Заявка подготовлена. Сейчас откроется WhatsApp/чат для отправки.";
+  const wa="https://wa.me/79320008887?text="+encodeURIComponent(msg);
+  setTimeout(()=>window.open(wa,"_blank","noopener"),250);
+});
+</script>
+</body>
+</html>
