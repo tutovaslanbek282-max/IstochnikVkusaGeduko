@@ -189,12 +189,14 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
 } 
 
 .map-real{
+  position:relative;
   height:100%;
   min-height:260px;
   border-radius:24px;
   overflow:hidden;
-  background:#eee5d1;
-  box-shadow:var(--shadow);
+  background:var(--cream);
+  border:1px solid rgba(77,28,24,.12);
+  box-shadow:0 20px 55px rgba(49,26,20,.12);
 }
 
 .map-real iframe{
@@ -203,6 +205,7 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
   height:100%;
   min-height:260px;
   border:0;
+  filter:saturate(.75) sepia(.08);
 }
 
 @media(max-width:900px){
@@ -221,6 +224,7 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
   .map-real{
     height:300px;
     min-height:300px;
+    border-radius:20px;
   }
 
   .map-real iframe{
