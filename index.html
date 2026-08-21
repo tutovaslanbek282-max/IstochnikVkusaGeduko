@@ -186,7 +186,25 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
  .booking-box{padding:34px 22px}
  .booking h2{font-size:50px}
  .footer-grid{gap:35px}.footer-bottom{flex-direction:column;gap:8px}
+} 
+
+.map-real{
+  min-height:260px;
+  height:100%;
+  border-radius:24px;
+  overflow:hidden;
+  background:#eee5d1;
+  box-shadow:var(--shadow);
 }
+
+.map-real iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:260px;
+  border:0;
+}
+  
 </style>
 </head>
 <body>
@@ -316,7 +334,7 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
  <div class="container contact-grid">
   <div class="contact-card">
    <div class="eyebrow">07 · Контакты</div>
-   <h3>Набережная, 41</h3>
+   <h3>Набережная, 31</h3>
    <p>Гедуко<br>Кабардино-Балкарская Республика</p> 
     <div style="margin-top:18px">
   <div class="eyebrow">Часы работы</div>
@@ -326,10 +344,18 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
   </p>
 </div>
    <p style="margin-top:18px"><a href="tel:+79320008887"><strong style="color:var(--wine)">8 (932) 000-88-87</strong></a></p>
-   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px"><a class="pill" href="tel:+79320008887">Позвонить</a><a class="pill light" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%93%D0%B5%D0%B4%D1%83%D0%BA%D0%BE%20%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%2041">Открыть карту</a></div>
+   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px"><a class="pill" href="tel:+79320008887">Позвонить</a><a class="pill light" target="_blank" rel="noopener" href="https://yandex.ru/maps/org/geduko/202340985510/">Открыть карту</a>
   </div>
-  <div class="map-placeholder"><div class="map-pin">●</div><div><div class="eyebrow">Мы здесь</div><h3 style="font-family:'Playfair Display',serif;font-size:32px">В сердце Гедуко</h3><p style="font-size:12px;color:var(--muted);margin-top:5px">Набережная, 41</p></div></div>
- </div>
+  <div class="map-real">
+  <iframe
+    src="https://yandex.ru/map-widget/v1/?ll=43.663905%2C43.663863&z=16&pt=43.663905%2C43.663863%2Cpm2rdm"
+    width="100%"
+    height="100%"
+    frameborder="0"
+    allowfullscreen="true"
+    style="border:0;">
+  </iframe>
+</div>
 </section>
 </main>
 
