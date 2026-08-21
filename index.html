@@ -189,8 +189,8 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
 } 
 
 .map-real{
-  min-height:260px;
   height:100%;
+  min-height:260px;
   border-radius:24px;
   overflow:hidden;
   background:#eee5d1;
@@ -203,6 +203,30 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
   height:100%;
   min-height:260px;
   border:0;
+}
+
+@media(max-width:900px){
+  .map-real{
+    height:360px;
+    min-height:360px;
+  }
+
+  .map-real iframe{
+    height:360px;
+    min-height:360px;
+  }
+}
+
+@media(max-width:600px){
+  .map-real{
+    height:300px;
+    min-height:300px;
+  }
+
+  .map-real iframe{
+    height:300px;
+    min-height:300px;
+  }
 }
   
 </style>
