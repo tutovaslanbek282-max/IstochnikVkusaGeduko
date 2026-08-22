@@ -633,10 +633,11 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.12
+  threshold: 0.05
 });
 
 revealItems.forEach(item => revealObserver.observe(item));
