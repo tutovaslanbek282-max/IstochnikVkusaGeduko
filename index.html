@@ -245,7 +245,29 @@ footer h4{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#d7b9
     min-height:300px;
   }
 }
-  
+
+html{
+  scroll-behavior:smooth;
+}
+
+.menu-card{
+  transition:transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+}
+
+.menu-card:active{
+  transform:scale(.98);
+}
+
+button,
+a{
+  transition:transform .25s ease, opacity .25s ease, background-color .25s ease, color .25s ease;
+}
+
+button:active,
+a:active{
+  transform:scale(.97);
+}
+ 
 </style>
 </head>
 <body>
