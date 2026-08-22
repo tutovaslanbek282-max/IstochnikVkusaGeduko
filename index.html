@@ -88,7 +88,20 @@ url("assets/hero.jpg") center 35%/cover no-repeat;transform:scale(1.03)}
 .menu-section{padding:125px 0}
 .menu-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
 .menu-head p{max-width:420px;color:var(--muted);font-size:13px;line-height:1.7}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  margin-bottom:28px;
+  padding-bottom:5px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+
+.tabs::-webkit-scrollbar{
+  display:none;
+}
 .tab{border:1px solid var(--line);background:transparent;color:var(--wine);padding:11px 15px;border-radius:999px;font-size:11px;font-weight:700;cursor:pointer;transition:.2s}
 .tab.active,.tab:hover{background:var(--wine);color:#fff}
 .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -423,7 +436,7 @@ const menu = [
 const tabs = document.getElementById("tabs");
 const grid = document.getElementById("menuGrid");
 const categories = [...new Set(menu.map(x=>x[0]))];
-let active = "Все";
+let active = categories[0];
 
 function renderTabs(){
   tabs.innerHTML = ["Все",...categories].map(c=>`<button class="tab ${c===active?"active":""}" data-cat="${c}">${c}</button>`).join("");
